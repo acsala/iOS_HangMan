@@ -17,3 +17,6 @@ Technologies implemented:
 <ul><i>
 <li>iOS</li>
 </ul>
+
+Mockup:
+<img src="/Doc/HangMan.jpg" alt="Mockup">
