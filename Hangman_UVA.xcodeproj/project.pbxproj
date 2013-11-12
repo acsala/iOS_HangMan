@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB236018182D4CD400843433 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB236017182D4CD400843433 /* Foundation.framework */; };
+		EB23601A182D4CD400843433 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB236019182D4CD400843433 /* CoreGraphics.framework */; };
+		EB23601C182D4CD400843433 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB23601B182D4CD400843433 /* UIKit.framework */; };
+		EB236022182D4CD400843433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB236020182D4CD400843433 /* InfoPlist.strings */; };
+		EB236024182D4CD400843433 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB236023182D4CD400843433 /* main.m */; };
+		EB236028182D4CD400843433 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB236027182D4CD400843433 /* AppDelegate.m */; };
+		EB23602B182D4CD400843433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB236029182D4CD400843433 /* Main.storyboard */; };
+		EB23602E182D4CD400843433 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB23602D182D4CD400843433 /* ViewController.m */; };
+		EB236030182D4CD400843433 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB23602F182D4CD400843433 /* Images.xcassets */; };
+		EB236037182D4CD400843433 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB236036182D4CD400843433 /* XCTest.framework */; };
+		EB236038182D4CD400843433 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB236017182D4CD400843433 /* Foundation.framework */; };
+		EB236039182D4CD400843433 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB23601B182D4CD400843433 /* UIKit.framework */; };
+		EB236041182D4CD400843433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB23603F182D4CD400843433 /* InfoPlist.strings */; };
+		EB236043182D4CD400843433 /* Hangman_UVATests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB236042182D4CD400843433 /* Hangman_UVATests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB23603A182D4CD400843433 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB23600C182D4CD400843433 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB236013182D4CD400843433;
+			remoteInfo = Hangman_UVA;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB236014182D4CD400843433 /* Hangman_UVA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman_UVA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB236017182D4CD400843433 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EB236019182D4CD400843433 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EB23601B182D4CD400843433 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EB23601F182D4CD400843433 /* Hangman_UVA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hangman_UVA-Info.plist"; sourceTree = "<group>"; };
+		EB236021182D4CD400843433 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EB236023182D4CD400843433 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EB236025182D4CD400843433 /* Hangman_UVA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hangman_UVA-Prefix.pch"; sourceTree = "<group>"; };
+		EB236026182D4CD400843433 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EB236027182D4CD400843433 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EB23602A182D4CD400843433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB23602C182D4CD400843433 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EB23602D182D4CD400843433 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EB23602F182D4CD400843433 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB236035182D4CD400843433 /* Hangman_UVATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hangman_UVATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB236036182D4CD400843433 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EB23603E182D4CD400843433 /* Hangman_UVATests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hangman_UVATests-Info.plist"; sourceTree = "<group>"; };
+		EB236040182D4CD400843433 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EB236042182D4CD400843433 /* Hangman_UVATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hangman_UVATests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB236011182D4CD400843433 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB23601A182D4CD400843433 /* CoreGraphics.framework in Frameworks */,
+				EB23601C182D4CD400843433 /* UIKit.framework in Frameworks */,
+				EB236018182D4CD400843433 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB236032182D4CD400843433 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB236037182D4CD400843433 /* XCTest.framework in Frameworks */,
+				EB236039182D4CD400843433 /* UIKit.framework in Frameworks */,
+				EB236038182D4CD400843433 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB23600B182D4CD400843433 = {
+			isa = PBXGroup;
+			children = (
+				EB23601D182D4CD400843433 /* Hangman_UVA */,
+				EB23603C182D4CD400843433 /* Hangman_UVATests */,
+				EB236016182D4CD400843433 /* Frameworks */,
+				EB236015182D4CD400843433 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB236015182D4CD400843433 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB236014182D4CD400843433 /* Hangman_UVA.app */,
+				EB236035182D4CD400843433 /* Hangman_UVATests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB236016182D4CD400843433 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB236017182D4CD400843433 /* Foundation.framework */,
+				EB236019182D4CD400843433 /* CoreGraphics.framework */,
+				EB23601B182D4CD400843433 /* UIKit.framework */,
+				EB236036182D4CD400843433 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB23601D182D4CD400843433 /* Hangman_UVA */ = {
+			isa = PBXGroup;
+			children = (
+				EB236026182D4CD400843433 /* AppDelegate.h */,
+				EB236027182D4CD400843433 /* AppDelegate.m */,
+				EB236029182D4CD400843433 /* Main.storyboard */,
+				EB23602C182D4CD400843433 /* ViewController.h */,
+				EB23602D182D4CD400843433 /* ViewController.m */,
+				EB23602F182D4CD400843433 /* Images.xcassets */,
+				EB23601E182D4CD400843433 /* Supporting Files */,
+			);
+			path = Hangman_UVA;
+			sourceTree = "<group>";
+		};
+		EB23601E182D4CD400843433 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB23601F182D4CD400843433 /* Hangman_UVA-Info.plist */,
+				EB236020182D4CD400843433 /* InfoPlist.strings */,
+				EB236023182D4CD400843433 /* main.m */,
+				EB236025182D4CD400843433 /* Hangman_UVA-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB23603C182D4CD400843433 /* Hangman_UVATests */ = {
+			isa = PBXGroup;
+			children = (
+				EB236042182D4CD400843433 /* Hangman_UVATests.m */,
+				EB23603D182D4CD400843433 /* Supporting Files */,
+			);
+			path = Hangman_UVATests;
+			sourceTree = "<group>";
+		};
+		EB23603D182D4CD400843433 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB23603E182D4CD400843433 /* Hangman_UVATests-Info.plist */,
+				EB23603F182D4CD400843433 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB236013182D4CD400843433 /* Hangman_UVA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB236046182D4CD400843433 /* Build configuration list for PBXNativeTarget "Hangman_UVA" */;
+			buildPhases = (
+				EB236010182D4CD400843433 /* Sources */,
+				EB236011182D4CD400843433 /* Frameworks */,
+				EB236012182D4CD400843433 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hangman_UVA;
+			productName = Hangman_UVA;
+			productReference = EB236014182D4CD400843433 /* Hangman_UVA.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB236034182D4CD400843433 /* Hangman_UVATests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB236049182D4CD400843433 /* Build configuration list for PBXNativeTarget "Hangman_UVATests" */;
+			buildPhases = (
+				EB236031182D4CD400843433 /* Sources */,
+				EB236032182D4CD400843433 /* Frameworks */,
+				EB236033182D4CD400843433 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB23603B182D4CD400843433 /* PBXTargetDependency */,
+			);
+			name = Hangman_UVATests;
+			productName = Hangman_UVATests;
+			productReference = EB236035182D4CD400843433 /* Hangman_UVATests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB23600C182D4CD400843433 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Attila Csala";
+				TargetAttributes = {
+					EB236034182D4CD400843433 = {
+						TestTargetID = EB236013182D4CD400843433;
+					};
+				};
+			};
+			buildConfigurationList = EB23600F182D4CD400843433 /* Build configuration list for PBXProject "Hangman_UVA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB23600B182D4CD400843433;
+			productRefGroup = EB236015182D4CD400843433 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB236013182D4CD400843433 /* Hangman_UVA */,
+				EB236034182D4CD400843433 /* Hangman_UVATests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB236012182D4CD400843433 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB236030182D4CD400843433 /* Images.xcassets in Resources */,
+				EB236022182D4CD400843433 /* InfoPlist.strings in Resources */,
+				EB23602B182D4CD400843433 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB236033182D4CD400843433 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB236041182D4CD400843433 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB236010182D4CD400843433 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB23602E182D4CD400843433 /* ViewController.m in Sources */,
+				EB236028182D4CD400843433 /* AppDelegate.m in Sources */,
+				EB236024182D4CD400843433 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB236031182D4CD400843433 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB236043182D4CD400843433 /* Hangman_UVATests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB23603B182D4CD400843433 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB236013182D4CD400843433 /* Hangman_UVA */;
+			targetProxy = EB23603A182D4CD400843433 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB236020182D4CD400843433 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB236021182D4CD400843433 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EB236029182D4CD400843433 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB23602A182D4CD400843433 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EB23603F182D4CD400843433 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB236040182D4CD400843433 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB236044182D4CD400843433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EB236045182D4CD400843433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB236047182D4CD400843433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hangman_UVA/Hangman_UVA-Prefix.pch";
+				INFOPLIST_FILE = "Hangman_UVA/Hangman_UVA-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EB236048182D4CD400843433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hangman_UVA/Hangman_UVA-Prefix.pch";
+				INFOPLIST_FILE = "Hangman_UVA/Hangman_UVA-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EB23604A182D4CD400843433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hangman_UVA.app/Hangman_UVA";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hangman_UVA/Hangman_UVA-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hangman_UVATests/Hangman_UVATests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EB23604B182D4CD400843433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hangman_UVA.app/Hangman_UVA";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hangman_UVA/Hangman_UVA-Prefix.pch";
+				INFOPLIST_FILE = "Hangman_UVATests/Hangman_UVATests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB23600F182D4CD400843433 /* Build configuration list for PBXProject "Hangman_UVA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB236044182D4CD400843433 /* Debug */,
+				EB236045182D4CD400843433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB236046182D4CD400843433 /* Build configuration list for PBXNativeTarget "Hangman_UVA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB236047182D4CD400843433 /* Debug */,
+				EB236048182D4CD400843433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EB236049182D4CD400843433 /* Build configuration list for PBXNativeTarget "Hangman_UVATests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB23604A182D4CD400843433 /* Debug */,
+				EB23604B182D4CD400843433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB23600C182D4CD400843433 /* Project object */;
+}
