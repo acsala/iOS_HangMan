@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB16B23D183385D500CD4FEC /* GamePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16B23C183385D500CD4FEC /* GamePlay.m */; };
 		EB236018182D4CD400843433 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB236017182D4CD400843433 /* Foundation.framework */; };
 		EB23601A182D4CD400843433 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB236019182D4CD400843433 /* CoreGraphics.framework */; };
 		EB23601C182D4CD400843433 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB23601B182D4CD400843433 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB16B23B183385D500CD4FEC /* GamePlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlay.h; sourceTree = "<group>"; };
+		EB16B23C183385D500CD4FEC /* GamePlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlay.m; sourceTree = "<group>"; };
 		EB236014182D4CD400843433 /* Hangman_UVA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman_UVA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB236017182D4CD400843433 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB236019182D4CD400843433 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +118,8 @@
 				EB236026182D4CD400843433 /* AppDelegate.h */,
 				EB236027182D4CD400843433 /* AppDelegate.m */,
 				EB236029182D4CD400843433 /* Main.storyboard */,
+				EB16B23B183385D500CD4FEC /* GamePlay.h */,
+				EB16B23C183385D500CD4FEC /* GamePlay.m */,
 				EB23602C182D4CD400843433 /* ViewController.h */,
 				EB23602D182D4CD400843433 /* ViewController.m */,
 				EB23602F182D4CD400843433 /* Images.xcassets */,
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB23602E182D4CD400843433 /* ViewController.m in Sources */,
+				EB16B23D183385D500CD4FEC /* GamePlay.m in Sources */,
 				EB236028182D4CD400843433 /* AppDelegate.m in Sources */,
 				EB236024182D4CD400843433 /* main.m in Sources */,
 			);
@@ -460,6 +466,7 @@
 				EB236048182D4CD400843433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB236049182D4CD400843433 /* Build configuration list for PBXNativeTarget "Hangman_UVATests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +475,7 @@
 				EB23604B182D4CD400843433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

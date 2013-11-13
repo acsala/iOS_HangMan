@@ -14,10 +14,18 @@
 
 @implementation ViewController
 
+@synthesize textField;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // hide the textfield
+    self.textField.hidden = YES;
+    // let keybord pop up after loading the app
+    [self.textField becomeFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning
