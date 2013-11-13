@@ -46,6 +46,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="answerLabel" destination="WCj-c7-yR1" id="cLT-0V-yHX"/>
+                        <outlet property="guessLabel" destination="ILt-JL-OsW" id="8ds-lL-FAG"/>
                         <outlet property="textField" destination="oqa-gQ-ZPh" id="ciu-rp-7Be"/>
                     </connections>
                 </viewController>

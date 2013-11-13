@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+// textfield in order to get input from user
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+//here we will display the answer
+@property (weak, nonatomic) IBOutlet UILabel *answerLabel;
+// display the reminding guesses
+@property (weak, nonatomic) IBOutlet UILabel *guessLabel;
 
 @end

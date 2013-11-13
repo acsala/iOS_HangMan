@@ -15,6 +15,8 @@
 @implementation ViewController
 
 @synthesize textField;
+@synthesize guessLabel;
+@synthesize answerLabel;
 
 - (void)viewDidLoad
 {
