@@ -10,5 +10,18 @@
 
 @implementation GamePlay
 
+- (void)start: (NSUserDefaults *)defaults
+{
+        
+    
+}
+
+- (NSArray *)wordCheck:(char)guess
+{
+    
+    
+    return nil;
+    
+}
 
 @end

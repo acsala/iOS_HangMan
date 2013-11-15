@@ -7,14 +7,35 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GamePlay.h"
+
+// height of the first line letters
+static const int Height1 = 80;
+// height of the second line letters
+static const int Height2 = 110;
+
+int guessCounter;
+int distanceLetter;
 
 @interface MainViewController : UIViewController
 
 // textfield in order to get input from user
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITextField *textInput;
 //here we will display the answer
-@property (weak, nonatomic) IBOutlet UILabel *answerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 // display the reminding guesses
 @property (weak, nonatomic) IBOutlet UILabel *guessLabel;
+// mutable array to store guessed letters
+@property (strong, nonatomic) NSMutableArray *lettersArray;
+
+@property (strong, nonatomic) NSMutableArray *productText;
+
+// make a property of model GamePlay
+@property (strong, nonatomic) GamePlay *gameplay;
+
+// method for new game
+-(IBAction)startGame:(id)sender;
+// capture input from user
+-(IBAction)receiveInput:(id)sender;
 
 @end

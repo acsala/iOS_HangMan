@@ -21,6 +21,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="receiveInput:" destination="vXZ-lx-hvc" eventType="editingChanged" id="x6Q-F7-1jc"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please take your guess!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILt-JL-OsW">
                                 <rect key="frame" x="69" y="178" width="182" height="21"/>
@@ -39,16 +42,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="kMy-HV-QXU"/>
+                                    <navigationItem title="Hangman" id="kMy-HV-QXU">
+                                        <barButtonItem key="leftBarButtonItem" title="New Game" id="fUR-CD-Rxo">
+                                            <connections>
+                                                <action selector="startGame:" destination="vXZ-lx-hvc" id="gjo-RS-LbP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="5Jl-af-VxB"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="answerLabel" destination="WCj-c7-yR1" id="cLT-0V-yHX"/>
-                        <outlet property="guessLabel" destination="ILt-JL-OsW" id="8ds-lL-FAG"/>
-                        <outlet property="textField" destination="oqa-gQ-ZPh" id="ciu-rp-7Be"/>
+                        <outlet property="displayLabel" destination="WCj-c7-yR1" id="kkW-51-kgs"/>
+                        <outlet property="guessLabel" destination="ILt-JL-OsW" id="KNS-on-Atq"/>
+                        <outlet property="textInput" destination="oqa-gQ-ZPh" id="H4h-qf-cif"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

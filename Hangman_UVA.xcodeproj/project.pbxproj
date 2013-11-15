@@ -22,6 +22,7 @@
 		EB236039182D4CD400843433 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB23601B182D4CD400843433 /* UIKit.framework */; };
 		EB236041182D4CD400843433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB23603F182D4CD400843433 /* InfoPlist.strings */; };
 		EB236043182D4CD400843433 /* Hangman_UVATests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB236042182D4CD400843433 /* Hangman_UVATests.m */; };
+		EB5BDC991836454F00181B26 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB5BDC981836454F00181B26 /* words.plist */; };
 		EB92671F18339C72003E2835 /* small.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB92671E18339C72003E2835 /* small.plist */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		EB23603E182D4CD400843433 /* Hangman_UVATests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hangman_UVATests-Info.plist"; sourceTree = "<group>"; };
 		EB236040182D4CD400843433 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB236042182D4CD400843433 /* Hangman_UVATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hangman_UVATests.m; sourceTree = "<group>"; };
+		EB5BDC981836454F00181B26 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
 		EB92671E18339C72003E2835 /* small.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = small.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 			children = (
 				EB236026182D4CD400843433 /* AppDelegate.h */,
 				EB236027182D4CD400843433 /* AppDelegate.m */,
+				EB5BDC981836454F00181B26 /* words.plist */,
 				EB92671E18339C72003E2835 /* small.plist */,
 				EB23601F182D4CD400843433 /* Hangman_UVA-Info.plist */,
 				EB236020182D4CD400843433 /* InfoPlist.strings */,
@@ -248,6 +251,7 @@
 				EB236022182D4CD400843433 /* InfoPlist.strings in Resources */,
 				EB92671F18339C72003E2835 /* small.plist in Resources */,
 				EB23602B182D4CD400843433 /* Main.storyboard in Resources */,
+				EB5BDC991836454F00181B26 /* words.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
