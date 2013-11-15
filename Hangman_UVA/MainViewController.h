@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
 
 // textfield in order to get input from user
 @property (weak, nonatomic) IBOutlet UITextField *textField;
