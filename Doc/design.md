@@ -20,7 +20,10 @@ Table that stores the data from eords.plist, for this table and id and word row 
 # Section 3 – A list of models and actions
 
 For the gameplay display:
-<ul>Answer lable that stores the word that the player have to guess for<i>
+<ul>
+<li>Answer lable that stores the word that the player have to guess for<i></li>
+<li>words.plist is loaded into memory and words that satisfies settings are loaded into arrays,
+further one random word is picked from this array to be the "to-guessed word"</li>
 <li>Some representation for the already guessed letters</li>
 <li>Label for remaining guesses</li>
 <li>New Game button</li>
@@ -30,6 +33,17 @@ For the gameplay display:
 
 A model has to be implemented to habdle the words, connection between database and view
 Perhaps a model for highlights?
+
+Classes:
+<ul>
+<li>GamePlay - with methdoes startGame and wordCheck</li>
+<li>Settings</li>
+<li>Highscores</li>
+</ul>
+
+In the mainController, a receiveInput handles the input from the user and sends it to the Model Gameplay where it is
+checked by methode wordCheck. Based upon the product of wordCheck, the mainController updates the view.
+Settings and Highscore is not implemented yet.
 
 # Style guide
 
