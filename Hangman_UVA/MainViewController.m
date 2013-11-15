@@ -16,6 +16,20 @@
 
 -(IBAction)startGame:(id)sender{
     
+    // clean the screen from guessed letters at beginning of the game
+    for (UILabel *s in self.lettersArray)
+    {
+        
+        [s removeFromSuperview];
+        
+    }
+    
+    // set up variable defaults as standardUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    // start the game with
+    [self.gameplay start: defaults];
+    
     // distance of first letter from the left edge of the screen
     distanceLetter= 0;
     
@@ -44,40 +58,139 @@
     // change taxt on label
     self.guessLabel.text = @"Please Guess A Letter!";
     
-    
+    // initialize gameplay
     self.gameplay = [[GamePlay alloc] init];
     
     
-    // resets the words array
+    // set wordsArray to an epty array
     self.gameplay.wordsArray = [[NSMutableArray alloc] initWithObjects: nil];
     
     
-    // we produce the correct number of blanks
+    // load the guesses counter from the user's chosen value
+    guessCounter = [[defaults stringForKey:@"guesses"] intValue];
+    
+    // initialize productText
     self.productText = [[NSMutableArray alloc] init];
     
-   
+    // for loop for filling the productText with the corresponding number of underscores
+    for(int counter = 0; counter < ([[defaults objectForKey:@"length"] intValue]); counter++)
+    {
+        // fill up the array productText with underscores
+        [self.productText addObject:@"- "];
+    }
     
-    // make the array into a string
+    // display productText on the screen
     self.displayLabel.text = [self.productText componentsJoinedByString:@""];
     
     // reset the remaining letters on screen
     [self resetLetters];
     
-   
-    [self.gameplay start: nil];
+    // start the game with default values
+    [self.gameplay start: defaults];
     
 }
 
 -(IBAction)receiveInput:(id)sender{
     
+    // display the number of guesses left
+    if([self.guessLabel.text  isEqual: @"Guess A Letter!"])
+        self.guessLabel.text = [NSString stringWithFormat:@"Guesses Left: %d", guessCounter];
+    
+    // if there is already a letter, we only select the latest letter entered
+    if([self.textInput.text length] > 1)
+    {
+        // track if the guess is correct
+        BOOL correct_guess = NO;
+        
+        // find the letter that is entered last
+        NSString *newOutput = [self.textInput.text substringFromIndex:[self.textInput.text length] -1];
+        
+        // display the new character in string form
+        self.textInput.text = newOutput;
+        
+        // we create the char version to be passed to the check function
+        char guess = [[newOutput lowercaseString] characterAtIndex:0];
+        
+        NSArray * answer = [self.gameplay wordCheck:guess];
+        
+        // see where to update the string being displayed
+        for (int i = 0; i < [answer count]; i++)
+        {
+            if([answer objectAtIndex:i] == [NSNumber numberWithInt:1])
+            {
+                [self.productText replaceObjectAtIndex:(i) withObject:[NSString stringWithFormat: @"%c", tolower(guess)]];
+                correct_guess = YES;
+            }
+            
+        }
+        
+        
+        // if the user guessed correctly
+        if(correct_guess == YES)
+        {
+            /*
+             componentsJoinedByString:
+             Constructs and returns an NSString object that is the result of interposing a given separator between the elements of the array.
+             */
+            self.displayLabel.text = [self.productText componentsJoinedByString:@""];
+            
+            // if user won
+            if([[self.gameplay.guessWord lowercaseString] isEqualToString:[self.displayLabel.text lowercaseString]]){
+                
+                self.guessLabel.text = [NSString stringWithFormat:@"You won!"];
+                
+            }
+            
+        }
+        
+        // if guess was incorrect
+        else
+        {
+            for(UILabel *s in self.lettersArray)
+            {
+                
+                if(guess == [s.text characterAtIndex:0])
+                {
+                    
+                    // updates guesses fields
+                    guessCounter--;
+                    self.guessLabel.text = [NSString stringWithFormat:@"Guesses Left: %d", guessCounter];
+                    
+                    // if user has no more guesses left
+                    if(guessCounter == 0 || guessCounter < 0)
+                    {
+                        self.guessLabel.text = [NSString stringWithFormat:@"You lost!"];
+                    }
+                    
+                    break;
+                }
+            }
+            
+            self.displayLabel.text = [self.productText componentsJoinedByString:@""];
+        }
+        
+        // checks if the letter is not guessed already
+        [self checkLetter];
+
+    }
     
     
 }
 
--(void)checkForLetter
+-(void)checkLetter
 {
     
-   
+    // iterate through the letters that are on the screen
+    for (UILabel *s in self.lettersArray) {
+        
+        // check if textInput index 0 is equal to s.text index 0
+        if([[self.textInput.text lowercaseString] characterAtIndex:0] == [s.text characterAtIndex:0]) {
+            
+            // if found change the guessed letter to an underscore
+            s.text = @"✗";
+        }
+        
+    }
     
 }
 
@@ -117,7 +230,7 @@
 {
     
     // programmatically create one of the available letter labels and add it to the view
-    letterLabel.text = [NSString stringWithFormat: @"%c", (int)('A' + i )];
+    letterLabel.text = [NSString stringWithFormat: @"%c", (int)('a' + i )];
     letterLabel.textColor = [UIColor blackColor];
     letterLabel.textAlignment   = UITextAlignmentCenter;
     letterLabel.font = [UIFont systemFontOfSize:14];
@@ -136,10 +249,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    // set up muatble dictonary to store defaults
+    // set up mutable dictonary to store defaults
     NSMutableDictionary *defaultValues = [[NSMutableDictionary alloc] init];
     [defaultValues setObject:@"5" forKey:@"length"];
-    [defaultValues setObject:@"8" forKey:@"guesses"];
+    [defaultValues setObject:@"10" forKey:@"guesses"];
     [defaultValues setObject:@"20" forKey:@"longestWord"];
     
     // save defaults in standardUserDefaults

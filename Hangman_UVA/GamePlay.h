@@ -10,9 +10,11 @@
 
 @interface GamePlay : NSObject <UITextFieldDelegate>
 
-
+// array to store words that match length from defaults
 @property (strong, nonatomic) NSMutableArray *wordsArray;
+// radnomly picked word from wordsArray
 @property (strong, nonatomic) NSString *guessWord;
+// product of wordCheck
 @property (strong, nonatomic) NSMutableArray *product;
 
 /*
