@@ -12,7 +12,11 @@
 
 - (void)start: (NSUserDefaults *)defaults
 {
-        
+    // remove all words to begin new game
+    [self.wordsArray removeAllObjects];
+    
+    // load the dictionary from the plist
+    NSArray *words = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
     
 }
 
