@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "GamePlay.h"
+#import "AudioToolbox/AudioToolbox.h"
+
 
 // height of the first line letters
 static const int Height1 = 80;
@@ -17,7 +19,11 @@ static const int Height2 = 110;
 int guessCounter;
 int distanceLetter;
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController{
+    
+    SystemSoundID sound;
+    
+}
 
 // textfield in order to get input from user
 @property (weak, nonatomic) IBOutlet UITextField *textInput;

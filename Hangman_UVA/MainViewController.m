@@ -173,7 +173,7 @@
         [self checkLetter];
 
     }
-    
+    AudioServicesPlaySystemSound(sound);
     
 }
 
@@ -248,6 +248,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // declear sound
+    NSURL *button = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"cashreg" ofType:@"mp3"]];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)button, &sound);
     
     // set up mutable dictonary to store defaults
     NSMutableDictionary *defaultValues = [[NSMutableDictionary alloc] init];

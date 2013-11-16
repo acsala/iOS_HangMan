@@ -24,6 +24,8 @@
 		EB236043182D4CD400843433 /* Hangman_UVATests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB236042182D4CD400843433 /* Hangman_UVATests.m */; };
 		EB5BDC991836454F00181B26 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB5BDC981836454F00181B26 /* words.plist */; };
 		EB92671F18339C72003E2835 /* small.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB92671E18339C72003E2835 /* small.plist */; };
+		EBFE14261837D8D900C61695 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFE14251837D8D900C61695 /* AudioToolbox.framework */; };
+		EBFE14281837DA0D00C61695 /* cashreg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBFE14271837DA0D00C61695 /* cashreg.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		EB236042182D4CD400843433 /* Hangman_UVATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hangman_UVATests.m; sourceTree = "<group>"; };
 		EB5BDC981836454F00181B26 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
 		EB92671E18339C72003E2835 /* small.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = small.plist; sourceTree = "<group>"; };
+		EBFE14251837D8D900C61695 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EBFE14271837DA0D00C61695 /* cashreg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cashreg.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBFE14261837D8D900C61695 /* AudioToolbox.framework in Frameworks */,
 				EB23601A182D4CD400843433 /* CoreGraphics.framework in Frameworks */,
 				EB23601C182D4CD400843433 /* UIKit.framework in Frameworks */,
 				EB236018182D4CD400843433 /* Foundation.framework in Frameworks */,
@@ -108,6 +113,7 @@
 		EB236016182D4CD400843433 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBFE14251837D8D900C61695 /* AudioToolbox.framework */,
 				EB236017182D4CD400843433 /* Foundation.framework */,
 				EB236019182D4CD400843433 /* CoreGraphics.framework */,
 				EB23601B182D4CD400843433 /* UIKit.framework */,
@@ -132,6 +138,7 @@
 		EB23601E182D4CD400843433 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EBFE14271837DA0D00C61695 /* cashreg.mp3 */,
 				EB236026182D4CD400843433 /* AppDelegate.h */,
 				EB236027182D4CD400843433 /* AppDelegate.m */,
 				EB5BDC981836454F00181B26 /* words.plist */,
@@ -247,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBFE14281837DA0D00C61695 /* cashreg.mp3 in Resources */,
 				EB236030182D4CD400843433 /* Images.xcassets in Resources */,
 				EB236022182D4CD400843433 /* InfoPlist.strings in Resources */,
 				EB92671F18339C72003E2835 /* small.plist in Resources */,
