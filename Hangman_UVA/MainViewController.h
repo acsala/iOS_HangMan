@@ -10,18 +10,19 @@
 #import "GamePlay.h"
 #import "AudioToolbox/AudioToolbox.h"
 
+int guessCounter;
+int distanceLetter;
 
 // height of the first line letters
 static const int Height1 = 80;
 // height of the second line letters
 static const int Height2 = 110;
 
-int guessCounter;
-int distanceLetter;
-
 @interface MainViewController : UIViewController{
     
-    SystemSoundID sound;
+    SystemSoundID guessSound;
+    SystemSoundID gameoverSound;
+    SystemSoundID gamewonSound;
     
 }
 
@@ -33,7 +34,7 @@ int distanceLetter;
 @property (weak, nonatomic) IBOutlet UILabel *guessLabel;
 // mutable array to store guessed letters
 @property (strong, nonatomic) NSMutableArray *lettersArray;
-
+// 
 @property (strong, nonatomic) NSMutableArray *productText;
 
 // make a property of model GamePlay

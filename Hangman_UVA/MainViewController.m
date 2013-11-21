@@ -1,10 +1,15 @@
-//
+/*
 //  ViewController.m
 //  Hangman_UVA
 //
 //  Created by Attila Csala on 11/8/13.
 //  Copyright (c) 2013 Attila Csala. All rights reserved.
 //
+// this HangMan implementation is inspired by the walkthrough for evil hangman of CS76, a grea deal
+// of help was Shawn Arney's tutorial (link www.youtube.com/watch?v=I63BSGsFnEw) reating and displaying
+// the arrays of letters along with the logics are partly implemented from github.com/buffalohird/Evil-
+// Hangman/blob/master/Project2_5/MainViewController.m
+*/
 
 #import "MainViewController.h"
 
@@ -15,6 +20,9 @@
 @implementation MainViewController
 
 -(IBAction)startGame:(id)sender{
+    
+    // show keyboard
+    [self.textInput becomeFirstResponder];
     
     // clean the screen from guessed letters at beginning of the game
     for (UILabel *s in self.lettersArray)
@@ -33,27 +41,8 @@
     // distance of first letter from the left edge of the screen
     distanceLetter= 0;
     
-    // set uo the guessable letters list on screen
-    for(int i = 0; i < 26; i++)
-    {
-        // with if else statement we are going to split our letters into two rows
-        if( i < 13)
-        {
-            UILabel *letterLabel = [[UILabel alloc] initWithFrame:CGRectMake(distanceLetter, Height1, 20, 15)];
-            
-            [self setUpLetter:letterLabel withIndex:i];
-        }
-        
-        else {
-            if( i == 13)
-                distanceLetter = 0;
-            
-            UILabel *letterLabel = [[UILabel alloc] initWithFrame:CGRectMake(distanceLetter, Height2, 20, 15)];
-            
-            [self setUpLetter:letterLabel withIndex:i];
-        }
-        
-    }
+    // set up the guessable letters list on screen
+    [self setLetters];
     
     // change taxt on label
     self.guessLabel.text = @"Please Guess A Letter!";
@@ -76,7 +65,7 @@
     for(int counter = 0; counter < ([[defaults objectForKey:@"length"] intValue]); counter++)
     {
         // fill up the array productText with underscores
-        [self.productText addObject:@"- "];
+        [self.productText addObject:@"_ "];
     }
     
     // display productText on the screen
@@ -90,40 +79,70 @@
     
 }
 
+// IBAction, takes the guesses from the player
 -(IBAction)receiveInput:(id)sender{
     
     // display the number of guesses left
-    if([self.guessLabel.text  isEqual: @"Guess A Letter!"])
-        self.guessLabel.text = [NSString stringWithFormat:@"Guesses Left: %d", guessCounter];
+    self.guessLabel.text = [NSString stringWithFormat:@"Guesses Left: %d", guessCounter];
     
     // if there is already a letter, we only select the latest letter entered
     if([self.textInput.text length] > 1)
     {
+        // find the letter that is entered last
+        NSString *updateText = [self.textInput.text substringFromIndex:[self.textInput.text length] -1];
+        
+        // display the new character in string form, then create the char version to be passed to the check function
+        self.textInput.text = updateText;
+        
+        char letter = [[updateText lowercaseString] characterAtIndex:[self.textInput.text length] -1];
+        
+        NSArray * checkedAnswer = [self.gameplay wordCheck:letter];
+        
         // track if the guess is correct
         BOOL correct_guess = NO;
         
-        // find the letter that is entered last
-        NSString *newOutput = [self.textInput.text substringFromIndex:[self.textInput.text length] -1];
-        
-        // display the new character in string form
-        self.textInput.text = newOutput;
-        
-        // we create the char version to be passed to the check function
-        char guess = [[newOutput lowercaseString] characterAtIndex:0];
-        
-        NSArray * answer = [self.gameplay wordCheck:guess];
-        
         // see where to update the string being displayed
-        for (int i = 0; i < [answer count]; i++)
+        for (int i = 0; i < [checkedAnswer count]; i++)
         {
-            if([answer objectAtIndex:i] == [NSNumber numberWithInt:1])
+            if([checkedAnswer objectAtIndex:i] == [NSNumber numberWithInt:1])
             {
-                [self.productText replaceObjectAtIndex:(i) withObject:[NSString stringWithFormat: @"%c", tolower(guess)]];
+                [self.productText replaceObjectAtIndex:(i) withObject:[NSString stringWithFormat: @"%c", tolower(letter)]];
                 correct_guess = YES;
+            }
+            else{
+                correct_guess = NO;
             }
             
         }
         
+        // if guess was incorrect
+        if (correct_guess == NO)
+        {
+            for(UILabel *display in self.lettersArray)
+            {
+                
+                if(letter == [display.text characterAtIndex:0])
+                {
+                    
+                    // updates guesses fields
+                    guessCounter--;
+                    self.guessLabel.text = [NSString stringWithFormat:@"Guesses Left: %d", guessCounter];
+                    
+                    // if user has no more guesses left
+                    if(guessCounter == 0 || guessCounter < 0)
+                    {
+                        self.guessLabel.text = [NSString stringWithFormat:@"You lost! The word was: %@", [self.gameplay.guessWord lowercaseString]];
+                        [self.textInput resignFirstResponder];
+                        AudioServicesPlaySystemSound(gameoverSound);
+                        
+                    }
+                    
+                    break;
+                }
+            }
+            
+            self.displayLabel.text = [self.productText componentsJoinedByString:@""];
+        }
         
         // if the user guessed correctly
         if(correct_guess == YES)
@@ -138,42 +157,18 @@
             if([[self.gameplay.guessWord lowercaseString] isEqualToString:[self.displayLabel.text lowercaseString]]){
                 
                 self.guessLabel.text = [NSString stringWithFormat:@"You won!"];
+                [self.textInput resignFirstResponder];
+                AudioServicesPlaySystemSound(gamewonSound);
                 
             }
             
-        }
-        
-        // if guess was incorrect
-        else
-        {
-            for(UILabel *s in self.lettersArray)
-            {
-                
-                if(guess == [s.text characterAtIndex:0])
-                {
-                    
-                    // updates guesses fields
-                    guessCounter--;
-                    self.guessLabel.text = [NSString stringWithFormat:@"Guesses Left: %d", guessCounter];
-                    
-                    // if user has no more guesses left
-                    if(guessCounter == 0 || guessCounter < 0)
-                    {
-                        self.guessLabel.text = [NSString stringWithFormat:@"You lost!"];
-                    }
-                    
-                    break;
-                }
-            }
-            
-            self.displayLabel.text = [self.productText componentsJoinedByString:@""];
         }
         
         // checks if the letter is not guessed already
         [self checkLetter];
 
     }
-    AudioServicesPlaySystemSound(sound);
+    AudioServicesPlaySystemSound(guessSound);
     
 }
 
@@ -181,13 +176,13 @@
 {
     
     // iterate through the letters that are on the screen
-    for (UILabel *s in self.lettersArray) {
+    for (UILabel *display in self.lettersArray) {
         
         // check if textInput index 0 is equal to s.text index 0
-        if([[self.textInput.text lowercaseString] characterAtIndex:0] == [s.text characterAtIndex:0]) {
+        if([[self.textInput.text lowercaseString] characterAtIndex:0] == [display.text characterAtIndex:0]) {
             
             // if found change the guessed letter to an underscore
-            s.text = @"✗";
+            display.text = @"✗";
         }
         
     }
@@ -196,17 +191,16 @@
 
 - (void) resetLetters
 {
-    //self.answerLabel.frame = CGRectMake(0, 122, 320, 21);
-    
     distanceLetter = 0;
+    int count = 0;
     
     // display the letters that aren't guessed yet
-    for(int i = 0; i < 26; i++){
+    while(count < 26){
         
         // with if else statement we are going to split our letters into two rows
-        if( i < 13){
+        if( count < 13){
             // point to a new UILabel object s
-            UILabel *s = [self.lettersArray objectAtIndex:i];
+            UILabel *s = [self.lettersArray objectAtIndex:count];
             // position of s
             s.frame = CGRectMake(distanceLetter, Height1, 20, 15);
             distanceLetter += 24;
@@ -214,15 +208,43 @@
         } else {
             
             // reset the x values for the beginning of row 2
-            if( i == 13)
+            if( count == 13)
                 distanceLetter = 0;
             
-            UILabel *s = [self.lettersArray objectAtIndex:i];
+            UILabel *s = [self.lettersArray objectAtIndex:count];
             s.frame = CGRectMake(distanceLetter, Height2, 20, 15);
             distanceLetter += 24;
         }
+        count++;
+    }
+}
+
+- (void) setLetters
+{
+    int count = 0;
+    while(count < 26)
+    {
+        // with if else statement we are going to split our letters into two rows
+        if( count < 13)
+        {
+            UILabel *letterLabel = [[UILabel alloc] initWithFrame:CGRectMake(distanceLetter, Height1, 20, 15)];
+            
+            [self setUpLetter:letterLabel withIndex:count];
+            count++;
+        }
+        
+        else {
+            if( count == 13)
+                distanceLetter = 0;
+            
+            UILabel *letterLabel = [[UILabel alloc] initWithFrame:CGRectMake(distanceLetter, Height2, 20, 15)];
+            
+            [self setUpLetter:letterLabel withIndex:count];
+            count++;
+        }
         
     }
+    
 }
 
 // method to create letters that are goung to be displayed
@@ -231,16 +253,16 @@
     
     // programmatically create one of the available letter labels and add it to the view
     letterLabel.text = [NSString stringWithFormat: @"%c", (int)('a' + i )];
+    letterLabel.backgroundColor = [UIColor clearColor];
+    letterLabel.font = [UIFont systemFontOfSize:16];
     letterLabel.textColor = [UIColor blackColor];
     letterLabel.textAlignment   = UITextAlignmentCenter;
-    letterLabel.font = [UIFont systemFontOfSize:14];
-    letterLabel.backgroundColor = [UIColor clearColor];
     [self.view addSubview:letterLabel];
     
-    // set the next letter to be further to the right
+    // set distance between letters
     distanceLetter += 24;
     
-    // add letter to array for checking if it has been guessed during the game
+    // lettersArray for adding letters for checking if it has been guessed during the game
     [self.lettersArray insertObject:letterLabel atIndex:i];
 }
 
@@ -249,29 +271,35 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // lettersArray and wordArray
+    self.lettersArray = [[NSMutableArray alloc] initWithObjects: nil];
+    
+    // let keybord pop up after loading the app
+    [self.textInput becomeFirstResponder];
+    
     // declear sound
-    NSURL *button = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"cashreg" ofType:@"mp3"]];
+    NSURL *guessLetterSound = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"cashreg" ofType:@"mp3"]];
+    NSURL *lostSound = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"lost" ofType:@"mp3"]];
+    NSURL *wonSound = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"won" ofType:@"mp3"]];
     
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)button, &sound);
+    // guessound
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)guessLetterSound, &guessSound);
+    // gameoverSound
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)lostSound, &gameoverSound);
+    // gamewonSOund
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)wonSound, &gamewonSound);
     
-    // set up mutable dictonary to store defaults
-    NSMutableDictionary *defaultValues = [[NSMutableDictionary alloc] init];
-    [defaultValues setObject:@"5" forKey:@"length"];
-    [defaultValues setObject:@"10" forKey:@"guesses"];
-    [defaultValues setObject:@"20" forKey:@"longestWord"];
+    // create mutable dictonary to store defaults
+    NSMutableDictionary *defs = [[NSMutableDictionary alloc] init];
+    [defs setObject:@"25" forKey:@"guesses"];
+    [defs setObject:@"3" forKey:@"length"];
     
     // save defaults in standardUserDefaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults registerDefaults:defaultValues];
+    NSUserDefaults *defValues = [NSUserDefaults standardUserDefaults];
+    [defValues registerDefaults:defs];
     
     // hide the textfield
     self.textInput.hidden = YES;
-    // let keybord pop up after loading the app
-    [self.textInput becomeFirstResponder];
-    self.textInput.text = @"_";
-    
-    // initialize the lettersArray and wordArray
-    self.lettersArray = [[NSMutableArray alloc] initWithObjects: nil];
     
     [self startGame: nil];
     

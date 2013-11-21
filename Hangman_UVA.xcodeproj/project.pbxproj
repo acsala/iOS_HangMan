@@ -14,7 +14,6 @@
 		EB236022182D4CD400843433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB236020182D4CD400843433 /* InfoPlist.strings */; };
 		EB236024182D4CD400843433 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB236023182D4CD400843433 /* main.m */; };
 		EB236028182D4CD400843433 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB236027182D4CD400843433 /* AppDelegate.m */; };
-		EB23602B182D4CD400843433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB236029182D4CD400843433 /* Main.storyboard */; };
 		EB23602E182D4CD400843433 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB23602D182D4CD400843433 /* MainViewController.m */; };
 		EB236030182D4CD400843433 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB23602F182D4CD400843433 /* Images.xcassets */; };
 		EB236037182D4CD400843433 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB236036182D4CD400843433 /* XCTest.framework */; };
@@ -22,8 +21,11 @@
 		EB236039182D4CD400843433 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB23601B182D4CD400843433 /* UIKit.framework */; };
 		EB236041182D4CD400843433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB23603F182D4CD400843433 /* InfoPlist.strings */; };
 		EB236043182D4CD400843433 /* Hangman_UVATests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB236042182D4CD400843433 /* Hangman_UVATests.m */; };
+		EB3E93B1183E495D0019A643 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3E93B0183E495D0019A643 /* FlipsideViewController.m */; };
+		EB3E93B5183E4AB40019A643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3E93B4183E4AB40019A643 /* Main.storyboard */; };
+		EB3E93B7183E4D640019A643 /* lost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3E93B6183E4D640019A643 /* lost.mp3 */; };
+		EB3E93B9183E4E140019A643 /* won.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB3E93B8183E4E140019A643 /* won.mp3 */; };
 		EB5BDC991836454F00181B26 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB5BDC981836454F00181B26 /* words.plist */; };
-		EB92671F18339C72003E2835 /* small.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB92671E18339C72003E2835 /* small.plist */; };
 		EBFE14261837D8D900C61695 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFE14251837D8D900C61695 /* AudioToolbox.framework */; };
 		EBFE14281837DA0D00C61695 /* cashreg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBFE14271837DA0D00C61695 /* cashreg.mp3 */; };
 /* End PBXBuildFile section */
@@ -51,7 +53,6 @@
 		EB236025182D4CD400843433 /* Hangman_UVA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hangman_UVA-Prefix.pch"; sourceTree = "<group>"; };
 		EB236026182D4CD400843433 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB236027182D4CD400843433 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EB23602A182D4CD400843433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB23602C182D4CD400843433 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		EB23602D182D4CD400843433 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EB23602F182D4CD400843433 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -60,8 +61,12 @@
 		EB23603E182D4CD400843433 /* Hangman_UVATests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hangman_UVATests-Info.plist"; sourceTree = "<group>"; };
 		EB236040182D4CD400843433 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB236042182D4CD400843433 /* Hangman_UVATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hangman_UVATests.m; sourceTree = "<group>"; };
+		EB3E93AF183E495D0019A643 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		EB3E93B0183E495D0019A643 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		EB3E93B4183E4AB40019A643 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EB3E93B6183E4D640019A643 /* lost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lost.mp3; sourceTree = "<group>"; };
+		EB3E93B8183E4E140019A643 /* won.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = won.mp3; sourceTree = "<group>"; };
 		EB5BDC981836454F00181B26 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
-		EB92671E18339C72003E2835 /* small.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = small.plist; sourceTree = "<group>"; };
 		EBFE14251837D8D900C61695 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EBFE14271837DA0D00C61695 /* cashreg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cashreg.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,7 +130,9 @@
 		EB23601D182D4CD400843433 /* Hangman_UVA */ = {
 			isa = PBXGroup;
 			children = (
-				EB236029182D4CD400843433 /* Main.storyboard */,
+				EB3E93B4183E4AB40019A643 /* Main.storyboard */,
+				EB3E93AF183E495D0019A643 /* FlipsideViewController.h */,
+				EB3E93B0183E495D0019A643 /* FlipsideViewController.m */,
 				EB23602C182D4CD400843433 /* MainViewController.h */,
 				EB23602D182D4CD400843433 /* MainViewController.m */,
 				EB5BDC9718363C2B00181B26 /* Model */,
@@ -138,11 +145,12 @@
 		EB23601E182D4CD400843433 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB3E93B8183E4E140019A643 /* won.mp3 */,
+				EB3E93B6183E4D640019A643 /* lost.mp3 */,
 				EBFE14271837DA0D00C61695 /* cashreg.mp3 */,
 				EB236026182D4CD400843433 /* AppDelegate.h */,
 				EB236027182D4CD400843433 /* AppDelegate.m */,
 				EB5BDC981836454F00181B26 /* words.plist */,
-				EB92671E18339C72003E2835 /* small.plist */,
 				EB23601F182D4CD400843433 /* Hangman_UVA-Info.plist */,
 				EB236020182D4CD400843433 /* InfoPlist.strings */,
 				EB236023182D4CD400843433 /* main.m */,
@@ -254,11 +262,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3E93B9183E4E140019A643 /* won.mp3 in Resources */,
 				EBFE14281837DA0D00C61695 /* cashreg.mp3 in Resources */,
+				EB3E93B5183E4AB40019A643 /* Main.storyboard in Resources */,
+				EB3E93B7183E4D640019A643 /* lost.mp3 in Resources */,
 				EB236030182D4CD400843433 /* Images.xcassets in Resources */,
 				EB236022182D4CD400843433 /* InfoPlist.strings in Resources */,
-				EB92671F18339C72003E2835 /* small.plist in Resources */,
-				EB23602B182D4CD400843433 /* Main.storyboard in Resources */,
 				EB5BDC991836454F00181B26 /* words.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +290,7 @@
 				EB23602E182D4CD400843433 /* MainViewController.m in Sources */,
 				EB16B23D183385D500CD4FEC /* GamePlay.m in Sources */,
 				EB236028182D4CD400843433 /* AppDelegate.m in Sources */,
+				EB3E93B1183E495D0019A643 /* FlipsideViewController.m in Sources */,
 				EB236024182D4CD400843433 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,14 +320,6 @@
 				EB236021182D4CD400843433 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		EB236029182D4CD400843433 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB23602A182D4CD400843433 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		EB23603F182D4CD400843433 /* InfoPlist.strings */ = {
