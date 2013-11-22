@@ -32,4 +32,6 @@ then pick a random word from the array and store it as a string
 
 - (BOOL)processInput:(NSString *)word;
 
+-(void)setScore:(NSString *)word :(int)score;
+
 @end

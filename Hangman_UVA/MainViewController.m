@@ -21,6 +21,9 @@
 
 -(IBAction)startGame:(id)sender{
     
+    // set the score to 0
+    self.scoreCounter = 0;
+    
     // show keyboard
     [self.textInput becomeFirstResponder];
     
@@ -89,14 +92,16 @@
     if([self.textInput.text length] > 1)
     {
         // find the letter that is entered last
-        NSString *updateText = [self.textInput.text substringFromIndex:[self.textInput.text length] -1];
-        
+        NSString *lastCharacter = [self.textInput.text substringFromIndex:[self.textInput.text length] -1];
+        NSLog([NSString stringWithFormat:@"%@", lastCharacter]);
         // display the new character in string form, then create the char version to be passed to the check function
-        self.textInput.text = updateText;
+        self.textInput.text = lastCharacter;
         
-        char letter = [[updateText lowercaseString] characterAtIndex:[self.textInput.text length] -1];
+        char letter = [[lastCharacter lowercaseString] characterAtIndex:[self.textInput.text length] -1];
         
         NSArray * checkedAnswer = [self.gameplay wordCheck:letter];
+        
+        NSLog(@"%@", checkedAnswer);
         
         // track if the guess is correct
         BOOL correct_guess = NO;
@@ -108,12 +113,12 @@
             {
                 [self.productText replaceObjectAtIndex:(i) withObject:[NSString stringWithFormat: @"%c", tolower(letter)]];
                 correct_guess = YES;
-                self.TEST.text = [NSString stringWithFormat:@"%d", correct_guess];
+                
                 NSLog([NSString stringWithFormat:@"%s", correct_guess ? "true" : "false"]);
             }
             else{
-                correct_guess = NO;
-                NSLog([NSString stringWithFormat:@"%s", correct_guess ? "true" : "false"]);
+                //correct_guess = NO;
+                //NSLog([NSString stringWithFormat:@"%s", correct_guess ? "true" : "false"]);
             }
             
         }
@@ -127,15 +132,18 @@
                 if(letter == [display.text characterAtIndex:0])
                 {
                     
-                    // updates guesses fields
-                    guessCounter--;
+                    guessCounter = guessCounter - 1;
                     self.guessLabel.text = [NSString stringWithFormat:@"Guesses Left: %d", guessCounter];
+                    // add to score
+                    self.scoreCounter = self.scoreCounter + 1;
                     
                     // if user has no more guesses left
                     if(guessCounter == 0 || guessCounter < 0)
                     {
                         self.guessLabel.text = [NSString stringWithFormat:@"You lost! The word was: %@", [self.gameplay.guessWord lowercaseString]];
                         [self.textInput resignFirstResponder];
+                        
+                        // play sound
                         AudioServicesPlaySystemSound(gameoverSound);
                         
                     }
@@ -161,7 +169,19 @@
                 
                 self.guessLabel.text = [NSString stringWithFormat:@"You won!"];
                 [self.textInput resignFirstResponder];
+                
+                // play sound
                 AudioServicesPlaySystemSound(gamewonSound);
+                
+                // save high scores
+                [self.gameplay setScore:self.gameplay.guessWord :self.scoreCounter];
+                //NSLog([NSString stringWithFormat:@"%@", scoresDictonary]);
+                
+                NSUserDefaults *scoresDictonary = [NSUserDefaults standardUserDefaults];
+                
+                self.scoresLabel.text = [NSString stringWithFormat:@"Word: %@, Score: %@ \n", [scoresDictonary valueForKey:@"words"], [scoresDictonary valueForKey:@"scores"]];
+                
+                NSLog(@"NSUserDefaults dump: %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
                 
             }
             

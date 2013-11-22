@@ -96,4 +96,19 @@
     
 }
 
+-(void)setScore:(NSString *)word :(int)score{
+    // create mutable dictonary to store defaults
+    
+    NSUserDefaults *scoreValues = [NSUserDefaults standardUserDefaults];
+    
+    if (scoreValues) {
+         
+         [scoreValues setObject:[NSString stringWithFormat:@"%@", word] forKey:@"words"];
+        [scoreValues setObject:[NSString stringWithFormat:@"%d", score] forKey:@"scores"];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+}
+
 @end

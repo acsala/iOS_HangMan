@@ -32,13 +32,15 @@ static const int Height2 = 110;
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 // display the reminding guesses
 @property (weak, nonatomic) IBOutlet UILabel *guessLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoresLabel;
+
+
 // mutable array to store guessed letters
 @property (strong, nonatomic) NSMutableArray *lettersArray;
-// 
+
 @property (strong, nonatomic) NSMutableArray *productText;
-
-@property (weak, nonatomic) IBOutlet UILabel *TEST;
-
+// keep track of score
+@property (nonatomic) int scoreCounter;
 
 // make a property of model GamePlay
 @property (strong, nonatomic) GamePlay *gameplay;

@@ -36,6 +36,8 @@
     self.wordsGuesses.text = [NSString stringWithFormat:@"Number of guesses: %@", guesses];
     self.wordsLength.text = [NSString stringWithFormat:@"Length of the words in play: %@", length];
     
+    // set minimum and maximum values of GuessesSlider
+    self.wordsGuessesSlider.minimumValue = 1.0f;
     self.wordsGuessesSlider.maximumValue = 26.0f;
     
     self.wordsGuessesSlider.value = [guesses floatValue];
@@ -43,8 +45,26 @@
     NSLog([NSString stringWithFormat:@"%f", [guesses floatValue]]);
     NSLog([NSString stringWithFormat:@"%f", 30.0f]);
     
+    /* set minimum and maximum values of LengthSlider, set the value of the shortest word's length in dictonary to minimum and the longest word's length in dictornary to maximum */
     
-    self.wordsLengthSlider.maximumValue = 12.0f;
+    // find the length of the longest and shortest words in our list
+    int longestWord = 0;
+    int shortestWord = 10;
+    for(NSString *word in [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]])
+    {
+        // replace the current 'king of length' if a longer word is found
+        if([word length] > longestWord)
+        {
+            longestWord = [word length];
+        }
+        if([word length] < shortestWord)
+        {
+            shortestWord = [word length];
+        }
+    }
+    
+    self.wordsLengthSlider.minimumValue = (float) shortestWord;
+    self.wordsLengthSlider.maximumValue = (float) longestWord;
     self.wordsLengthSlider.value = [length floatValue];
     
 }
@@ -56,11 +76,25 @@
 }
 
 -(IBAction)changeSliderLength:(id)sender{
-    self.wordsLength.text = [NSString stringWithFormat:@"Length of the words in play: %d ", (int) self.wordsLengthSlider.value];
+    
+    int newLength = (int) self.wordsLengthSlider.value;
+    
+    self.wordsLength.text = [NSString stringWithFormat:@"Length of the words in play: %d ", newLength];
+    
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    [defs setObject:[NSString stringWithFormat:@"%d", newLength] forKey:@"length"];
+    [defs synchronize];
 }
 
 -(IBAction)changeSliderGuesses:(id)sender{
-    self.wordsGuesses.text = [NSString stringWithFormat:@"Number of guesses: %d ", (int) self.wordsGuessesSlider.value];
+    
+    int newGuesses = (int) self.wordsGuessesSlider.value;
+    self.wordsGuesses.text = [NSString stringWithFormat:@"Number of guesses: %d ", newGuesses];
+    
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    [defs setObject:[NSString stringWithFormat:@"%d", newGuesses] forKey:@"guesses"];
+    [defs synchronize];
+    
 }
 
 @end
