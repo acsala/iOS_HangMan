@@ -82,11 +82,45 @@
                     <view key="view" contentMode="scaleToFill" id="NBX-Aj-8Te">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Length of the words in play: 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h5-s8-Epi">
+                                <rect key="frame" x="33" y="135" width="254" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of guesses: 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tp-yl-Akv">
+                                <rect key="frame" x="52" y="215" width="217" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pOB-bS-9gt">
+                                <rect key="frame" x="101" y="164" width="118" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeSliderLength:" destination="9gB-ia-vmE" eventType="valueChanged" id="UKN-GQ-Ibe"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0xF-mn-Ijc">
+                                <rect key="frame" x="101" y="244" width="118" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeSliderGuesses:" destination="9gB-ia-vmE" eventType="valueChanged" id="eRl-i5-7v2"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HFS-In-5kg">
                         <barButtonItem key="backBarButtonItem" title="Back" id="YtW-SI-Cc4"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="wordsGuesses" destination="5tp-yl-Akv" id="ReL-u3-47U"/>
+                        <outlet property="wordsGuessesSlider" destination="0xF-mn-Ijc" id="4Cs-NE-ajb"/>
+                        <outlet property="wordsLength" destination="1h5-s8-Epi" id="YWX-gE-Fk9"/>
+                        <outlet property="wordsLengthSlider" destination="pOB-bS-9gt" id="2W8-Vp-Xbl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qW5-f3-fW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

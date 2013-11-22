@@ -10,4 +10,12 @@
 
 @interface FlipsideViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *wordsLength;
+@property (weak, nonatomic) IBOutlet UILabel *wordsGuesses;
+@property (weak, nonatomic) IBOutlet UISlider *wordsLengthSlider;
+@property (weak, nonatomic) IBOutlet UISlider *wordsGuessesSlider;
+
+-(IBAction)changeSliderLength:(id)sender;
+-(IBAction)changeSliderGuesses:(id)sender;
+
 @end
