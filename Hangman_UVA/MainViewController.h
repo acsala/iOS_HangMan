@@ -37,6 +37,9 @@ static const int Height2 = 110;
 // 
 @property (strong, nonatomic) NSMutableArray *productText;
 
+@property (weak, nonatomic) IBOutlet UILabel *TEST;
+
+
 // make a property of model GamePlay
 @property (strong, nonatomic) GamePlay *gameplay;
 

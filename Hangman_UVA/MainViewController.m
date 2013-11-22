@@ -108,9 +108,12 @@
             {
                 [self.productText replaceObjectAtIndex:(i) withObject:[NSString stringWithFormat: @"%c", tolower(letter)]];
                 correct_guess = YES;
+                self.TEST.text = [NSString stringWithFormat:@"%d", correct_guess];
+                NSLog([NSString stringWithFormat:@"%s", correct_guess ? "true" : "false"]);
             }
             else{
                 correct_guess = NO;
+                NSLog([NSString stringWithFormat:@"%s", correct_guess ? "true" : "false"]);
             }
             
         }
@@ -303,12 +306,6 @@
     
     [self startGame: nil];
     
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
